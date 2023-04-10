@@ -143,3 +143,7 @@ Mostra as linhas que apareceram duplicadas
 sort names.txt | uniq -c
 ```
 Conta as repetições e traz o item.
+```
+sort names.txt | uniq -c | sort -r | head -n1
+```
+Obtem a linha com mais repetições
