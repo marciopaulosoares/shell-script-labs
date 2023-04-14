@@ -147,3 +147,46 @@ Conta as repetições e traz o item.
 sort names.txt | uniq -c | sort -r | head -n1
 ```
 Obtem a linha com mais repetições
+
+## tr
+
+Troca letras minúsculas por maiúsculas
+```
+cat names.txt| tr a-z A-Z
+PATTY O’FURNITURE
+PADDY O’FURNITURE
+
+```
+Deletar letras
+```
+cat names.txt| tr -d aei
+Ptty O’Furntur
+Pddy O’Furntur
+Olv Yw
+
+```
+Suprimir uma letra
+```
+echo "Shell script" | tr -s l
+Shel script
+```
+
+## cut
+```
+cat names.txt| cut -c1-4
+Patt
+Padd
+
+cat names.txt| cut -c1,3
+cat names.txt| cut -c1,3
+Pt
+Pd
+
+
+```
+Corta por campos, selecionando o espaço como divisor entre uma palavra e outra
+```
+cat names.txt| cut -d" " -f1       
+Patty
+Paddy
+```
