@@ -190,3 +190,119 @@ cat names.txt| cut -d" " -f1
 Patty
 Paddy
 ```
+
+## diff
+```
+diff -w listaA.txt listaB.txt
+
+3c3
+< Ricardo 
+---
+> Ricardo Nonato
+```
+Mostra que na linha 3 existe o nome Ricardo no arquivo da esquerda e no da direita existe Ricardo Nonato
+
+```
+diff -r diretorio01 diretorio02
+```
+Compara os arquivos de dois diretórios.
+
+## grep
+
+```
+grep Marcio alunos.txt
+grep Marcio alunos*
+grep -i (ignora o Case)
+grep -c Ana (conta a quantidade de ocorrências)
+grep -v Ana (não exibe a linha que contem a expressão)
+grep -r  Ana * (procura recursivamente em todos os diretóerios)
+grep -A3 (after - mostra 3 linhas após a expressão, útil para analisar logs)
+grep -B3 (before - mostra as 3 linhas que estão antes da expressão)
+
+grep / fgrep / egrep
+
+```
+fgrep -> não usa expressão regular
+egrep -> utiliza expressão regular
+
+## sed
+```
+sed --help
+
+sed '1,3 d' arquivo.txt
+remove da linha 1 a 3
+
+sed '/Marcio/d' arquivo.txt
+remove a linha em que existe a string
+
+cat arquivo.txt sed 's/Marcio/Paulo/'
+substitui Marcio por Paulo
+
+echo "Curso Linux Shell Script Linux" |  sed 's/Linux/Unix/g'
+substitui todas as ocorrências usando "g" global.
+```
+## more
+```
+more arquivo.txt
+enter -> segue a linha
+barra espaço -> próxima página
+
+less arquivo.txt
+
+/certificate
+busca a expresão
+
+?certificate
+busca de baixo pra cima
+
+n -> próxima
+N -> anterior
+q -> sai da busca
+```
+
+## find
+```
+find ./ -name alunos.txt
+find ./ -name *alunos*
+find ./ -user marcio -name alunos.txt
+find ./ -name alunos* -exec ls -l {} \;
+```
+
+## date
+```
+date --help
+date +%H (hora)
+date +%M (minuto)
+date +%d/%m (dd/mm)
+```
+## seq
+```
+seq 20
+seq 0 20
+
+faz a sequencia até 20
+seq 5 2 20
+vai do 4 ao 20 de dois em dois
+```
+
+## expr
+```
+expr 5 + 2
+expr 5 \* 2
+echo 3 + 2 | bc 
+```
+## Comandos sequenciais
+```
+ls arquivo.txt ; echo linux
+Executa na sequência, não importa se um dos comandos der erro.
+
+
+ls arquivo.txt && echo linux
+Executa o segundo comando apenas se  o primeiro foi bem sucedido.
+
+ls arquivo.txt || echo linux
+Executa o segundo commando apenas se o primeiro falhar.
+
+$ (cd .. ; ls -l)
+Executa o comando sem sair do diretorio atual abrindo um sub shell
+```
