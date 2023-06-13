@@ -306,3 +306,26 @@ Executa o segundo commando apenas se o primeiro falhar.
 $ (cd .. ; ls -l)
 Executa o comando sem sair do diretorio atual abrindo um sub shell
 ```
+## PATH
+Deixar o PATH permanente
+```
+vi ~/.profile
+
+PATH="$PATH:/caminho_diretorio"
+
+```
+## Modelo de Comentário Cabeçalho
+```
+###################################################
+#
+# primeiro-script.sh - Script de Exemplo
+#
+# Autor: Marcio Paulo
+# Data Criação: DD/MM/YYYY
+#
+# Descrição: Script de exemplo
+#
+# Exemplo de uso: ./primeiro-script dia 
+#
+###################################################
+```
